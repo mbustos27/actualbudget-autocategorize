@@ -1,0 +1,44 @@
+{
+  "name": "actualbudget-autocategorize",
+  "version": "1.0.0",
+  "description": "Auto-categorize Actual Budget transactions using local Ollama (llama3)",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dry-run": "node scripts/dry-run.mjs",
+    "refine": "node scripts/refine.mjs",
+    "refine-dry-run": "node scripts/refine-dry-run.mjs",
+    "double-run": "node scripts/double-run.mjs",
+    "double-dry-run": "node scripts/double-dry-run.mjs",
+    "consolidate": "node scripts/consolidate.mjs",
+    "consolidate-fix": "node scripts/consolidate.mjs --fix",
+    "consolidate-fix-delete": "node scripts/consolidate.mjs --fix --delete",
+    "analyze": "node scripts/consolidate.mjs --analyze",
+    "fix-auto": "node scripts/consolidate.mjs --fix --auto",
+    "fix-specific": "node scripts/fix-specific.mjs",
+    "find-payee": "node scripts/find-payee.mjs",
+    "summary": "node scripts/monthly-summary.mjs",
+    "summary:last": "node scripts/monthly-summary.mjs --last",
+    "summary:save": "node scripts/monthly-summary.mjs --save",
+    "compare": "node scripts/compare-months.mjs",
+    "balance": "node scripts/balance.mjs",
+    "ideate": "node scripts/ideate-budget.mjs",
+    "ideate:export": "node scripts/ideate-budget.mjs --export",
+    "tracker": "node scripts/budget-tracker.mjs",
+    "apply-budget": "node scripts/apply-budget.mjs",
+    "apply-budget:dry": "node scripts/apply-budget.mjs --dry-run",
+    "setup-next-month": "node scripts/setup-next-month.mjs",
+    "delete-empty": "node scripts/consolidate.mjs --delete-empty",
+    "delete-empty:dry": "node scripts/consolidate.mjs --delete-empty --dry-run",
+    "email-report": "powershell -File scripts/send-monthly-report.ps1",
+    "email-report:dry": "powershell -File scripts/send-monthly-report.ps1 -DryRun"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@actual-app/api": "^26.4.0",
+    "dotenv": "^16.4.5"
+  }
+}
